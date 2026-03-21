@@ -73,8 +73,6 @@
 | Projet | Description | Stack |
 |--------|-------------|-------|
 | 🎙️ **[DiscordBotSpeaker](https://github.com/OmegaOneCTRL/Discord-Bot-Speaker)** | Interface web locale pour contrôler un bot Discord — UI Discord-like, v2.1.0 | `Bun` `TypeScript` `JavaScript` |
-| 🔧 **DiscordForge** | PWA / app locale pour configurer des bots Discord et déployer des scripts Python | `HTML` `JavaScript` |
-| 🎬 **Movix** | App Electron cross-platform avec OAuth Discord/Google, ad-blocking et auto-updater | `TypeScript` `Electron` |
 
 ---
 
