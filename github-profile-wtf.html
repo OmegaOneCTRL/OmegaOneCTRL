@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OmegaOneCTRL — WTF GitHub Profile</title>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Bebas+Neue&family=VT323&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --black:#00000a;--neon:#00ff9f;--neon2:#ff003c;--neon3:#ffe600;--neon4:#00cfff;
+  --purple:#bf00ff;--text:#b8ffd8;--muted:#2a5a3a;--dim:#000a05;
+}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--text);font-family:'Share Tech Mono',monospace;font-size:14px;min-height:100vh;overflow-x:hidden;cursor:crosshair}
+body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.08) 2px,rgba(0,0,0,.08) 4px);pointer-events:none;z-index:9999}
+body::after{content:'';position:fixed;inset:0;background:radial-gradient(ellipse at center,transparent 60%,rgba(0,0,0,.45) 100%);pointer-events:none;z-index:9998;animation:flicker 8s ease infinite}
+@keyframes flicker{0%,100%{opacity:1}92%{opacity:1}92.5%{opacity:.85}93%{opacity:1}97%{opacity:1}97.3%{opacity:.9}97.6%{opacity:1}}
+#matrix-bg{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;opacity:.07}
+.gh-nav{position:relative;z-index:100;background:rgba(0,0,10,.95);border-bottom:1px solid var(--neon);padding:10px 24px;display:flex;align-items:center;gap:16px;box-shadow:0 0 20px rgba(0,255,159,.15)}
+.gh-logo{font-family:'Orbitron',sans-serif;font-size:18px;font-weight:900;color:var(--neon);text-shadow:0 0 10px var(--neon),0 0 30px rgba(0,255,159,.4);letter-spacing:.05em}
+.gh-nav-link{color:var(--muted);font-size:12px;letter-spacing:.1em;padding:4px 8px;border:1px solid transparent;transition:all .2s}
+.gh-nav-link:hover{color:var(--neon);border-color:var(--neon);text-shadow:0 0 8px var(--neon)}
+.blink{animation:blink-a 1s step-end infinite}
+@keyframes blink-a{50%{opacity:0}}
+.gh-main{position:relative;z-index:10;max-width:1280px;margin:0 auto;padding:32px 24px;display:grid;grid-template-columns:300px 1fr;gap:32px;align-items:start}
+
+/* SIDEBAR */
+.avatar-radar{position:relative;width:280px;height:280px;margin-bottom:20px}
+.radar-ring{position:absolute;border-radius:50%;border:1px solid rgba(0,255,159,.15);top:50%;left:50%;transform:translate(-50%,-50%)}
+.r1{width:100%;height:100%;border-color:rgba(0,255,159,.1)}
+.r2{width:73%;height:73%;border-color:rgba(0,255,159,.18)}
+.r3{width:46%;height:46%;border-color:rgba(0,255,159,.25)}
+.radar-sweep{position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 0deg,transparent 0deg,transparent 320deg,rgba(0,255,159,.07) 340deg,rgba(0,255,159,.22) 355deg,rgba(0,255,159,.04) 360deg);animation:sweep 3s linear infinite}
+@keyframes sweep{to{transform:rotate(360deg)}}
+.radar-cross{position:absolute;inset:0;border-radius:50%}
+.radar-cross::before{content:'';position:absolute;width:1px;height:100%;left:50%;top:0;background:rgba(0,255,159,.1)}
+.radar-cross::after{content:'';position:absolute;width:100%;height:1px;top:50%;left:0;background:rgba(0,255,159,.1)}
+.blip{position:absolute;width:5px;height:5px;border-radius:50%;background:var(--neon);box-shadow:0 0 8px var(--neon);animation:blip-f 3s ease infinite}
+@keyframes blip-f{0%,50%{opacity:1}100%{opacity:.2}}
+.avatar-inner{position:absolute;inset:30px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#0f2a1a,#000a05);border:2px solid var(--neon);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 0 30px rgba(0,255,159,.1),0 0 30px rgba(0,255,159,.2)}
+.omega-symbol{font-family:'Orbitron',sans-serif;font-size:88px;font-weight:900;color:var(--neon);text-shadow:0 0 20px rgba(0,255,159,.9),0 0 50px rgba(0,255,159,.4),0 0 90px rgba(0,255,159,.15);line-height:1;animation:omega-pulse 4s ease infinite;user-select:none}
+@keyframes omega-pulse{0%,100%{text-shadow:0 0 20px rgba(0,255,159,.9),0 0 50px rgba(0,255,159,.4),0 0 90px rgba(0,255,159,.15)}50%{text-shadow:0 0 30px rgba(0,255,159,1),0 0 70px rgba(0,255,159,.6),0 0 120px rgba(0,255,159,.25)}}
+.profile-name{font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:.15em;color:var(--neon);text-shadow:0 0 15px rgba(0,255,159,.6);margin-bottom:2px;animation:glitch-n 6s ease infinite}
+@keyframes glitch-n{0%,93%,100%{text-shadow:0 0 15px rgba(0,255,159,.6);transform:translate(0)}94%{transform:translate(-3px,1px);text-shadow:-2px 0 var(--neon2),2px 0 var(--neon4)}95%{transform:translate(3px,-1px);text-shadow:2px 0 var(--neon2),-2px 0 var(--neon4)}95.5%{transform:translate(0);text-shadow:0 0 15px rgba(0,255,159,.6)}}
+.profile-handle{font-family:'VT323',monospace;font-size:18px;color:var(--muted);margin-bottom:16px;letter-spacing:.05em}
+.profile-handle::before{content:'@ ';color:var(--neon2)}
+.bio-terminal{background:#000a05;border:1px solid rgba(0,255,159,.2);border-radius:4px;padding:12px 14px;margin-bottom:16px;font-size:12px;line-height:1.8;position:relative}
+.bio-line{color:#5a8a6a;margin-bottom:1px}
+.bio-line span{color:var(--neon)}
+.bio-line em{color:var(--neon3);font-style:normal}
+.bio-line strong{color:var(--neon2);font-weight:normal}
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:20px}
+.stat-box{border:1px solid rgba(0,255,159,.15);background:#000a05;padding:10px;text-align:center;transition:border-color .2s}
+.stat-box:hover{border-color:var(--neon)}
+.stat-num{font-family:'Orbitron',sans-serif;font-size:20px;font-weight:700;color:var(--neon);text-shadow:0 0 10px rgba(0,255,159,.5);line-height:1;margin-bottom:4px}
+.stat-label{font-size:9px;letter-spacing:.15em;color:var(--muted);text-transform:uppercase}
+.tech-tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:16px}
+.tag{font-family:'VT323',monospace;font-size:14px;padding:2px 8px;border:1px solid;transition:all .15s}
+.tag:hover{transform:skewX(-4deg)}
+.tag-g{color:var(--neon);border-color:rgba(0,255,159,.3);background:rgba(0,255,159,.05)}
+.tag-r{color:var(--neon2);border-color:rgba(255,0,60,.3);background:rgba(255,0,60,.05)}
+.tag-y{color:var(--neon3);border-color:rgba(255,230,0,.3);background:rgba(255,230,0,.05)}
+.tag-b{color:var(--neon4);border-color:rgba(0,207,255,.3);background:rgba(0,207,255,.05)}
+.tag-p{color:var(--purple);border-color:rgba(191,0,255,.3);background:rgba(191,0,255,.05)}
+
+/* MAIN */
+.profile-tabs{display:flex;border-bottom:1px solid rgba(0,255,159,.15);margin-bottom:24px;background:rgba(0,0,10,.9);position:relative;z-index:10}
+.tab{padding:10px 16px;font-size:12px;letter-spacing:.1em;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;transition:all .15s;text-transform:uppercase}
+.tab.active{color:var(--neon);border-bottom-color:var(--neon);text-shadow:0 0 8px rgba(0,255,159,.5)}
+.readme-wrapper{border:1px solid rgba(0,255,159,.2);background:#00000a;position:relative;overflow:hidden}
+.readme-wrapper::before{content:'';position:absolute;top:-1px;left:-1px;width:20px;height:20px;border-top:2px solid var(--neon);border-left:2px solid var(--neon)}
+.readme-wrapper::after{content:'';position:absolute;bottom:-1px;right:-1px;width:20px;height:20px;border-bottom:2px solid var(--neon);border-right:2px solid var(--neon)}
+.rm-header{background:#000a05;border-bottom:1px solid rgba(0,255,159,.15);padding:8px 16px;display:flex;align-items:center;gap:8px;font-size:11px;color:var(--muted);letter-spacing:.1em}
+.rm-body{padding:28px 32px}
+
+/* HERO */
+.hero{text-align:center;margin-bottom:36px}
+.ascii-art{font-family:'VT323',monospace;font-size:11px;line-height:1.1;color:rgba(0,255,159,.2);margin-bottom:14px;white-space:pre;letter-spacing:.05em;user-select:none}
+.hero-title{font-family:'Bebas Neue',sans-serif;letter-spacing:.12em;line-height:.9;margin-bottom:8px;display:inline-block}
+.hero-title .t1{color:var(--neon);text-shadow:0 0 20px rgba(0,255,159,.8),0 0 60px rgba(0,255,159,.3);display:block;animation:glitch-big 5s ease infinite}
+.hero-title .t2{color:transparent;-webkit-text-stroke:1px rgba(255,0,60,.6);display:block;font-size:40px;letter-spacing:.3em}
+@keyframes glitch-big{0%,91%,94%,100%{clip-path:none;transform:translate(0);filter:none}92.3%{clip-path:polygon(0 20%,100% 20%,100% 40%,0 40%);transform:translate(-4px,2px);filter:hue-rotate(90deg)}92.6%{clip-path:polygon(0 60%,100% 60%,100% 80%,0 80%);transform:translate(4px,-2px)}}
+.hero-sub{font-family:'Share Tech Mono',monospace;font-size:13px;color:var(--muted);letter-spacing:.2em;margin-top:8px;text-transform:uppercase}
+.hero-sub span{color:var(--neon2)}
+.type-cursor{display:inline-block;width:8px;height:14px;background:var(--neon);vertical-align:middle;animation:blink-a .7s step-end infinite;box-shadow:0 0 6px var(--neon)}
+.neon-div{height:1px;background:linear-gradient(90deg,transparent,var(--neon),var(--neon2),var(--neon4),transparent);margin:24px 0;animation:div-f 3s linear infinite;background-size:200%}
+@keyframes div-f{0%{background-position:0%}100%{background-position:200%}}
+
+/* SECTION TITLE */
+.sec-title{font-family:'Orbitron',sans-serif;font-size:11px;letter-spacing:.3em;text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.sec-title .bracket{color:var(--neon2)}
+.sec-title .label{color:var(--neon3)}
+.sec-title::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,rgba(0,255,159,.3),transparent)}
+
+/* HEX GRID */
+.hex-grid{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px;align-items:center}
+.hex{position:relative;width:68px;height:78px;clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;transition:all .2s;cursor:default}
+.hex:hover{transform:scale(1.12) translateY(-4px)}
+.hex-bg{position:absolute;inset:0;clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%)}
+.hex-icon{font-size:22px;position:relative;z-index:1}
+.hex-label{font-family:'VT323',monospace;font-size:11px;letter-spacing:.05em;position:relative;z-index:1}
+
+/* PROJ GRID */
+.proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px}
+.proj-card{border:1px solid rgba(0,255,159,.1);background:#00050210;padding:18px;position:relative;overflow:hidden;transition:all .2s;cursor:pointer}
+.proj-card::before{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(0,255,159,.04),transparent);transition:left .4s ease}
+.proj-card:hover::before{left:150%}
+.proj-card:hover{border-color:rgba(0,255,159,.4);box-shadow:0 0 20px rgba(0,255,159,.08);transform:translateY(-2px)}
+.proj-top-bar{height:2px;margin:-18px -18px 14px}
+.proj-icon{font-size:24px;margin-bottom:8px}
+.proj-name{font-family:'Orbitron',sans-serif;font-size:12px;font-weight:700;letter-spacing:.08em;margin-bottom:6px}
+.proj-desc{font-size:11px;color:#4a7a5a;line-height:1.5;margin-bottom:12px}
+.proj-tags{display:flex;gap:5px;flex-wrap:wrap}
+.proj-tag{font-family:'VT323',monospace;font-size:12px;padding:1px 6px;border:1px solid}
+
+/* SNAKE SECTION */
+.snake-section{border:1px solid rgba(0,255,159,.2);background:#000a05;padding:20px;margin-bottom:28px;position:relative}
+.snake-section::before{content:'CONTRIBUTION_SNAKE.SVG';font-family:'Orbitron',sans-serif;font-size:9px;letter-spacing:.2em;color:rgba(0,255,159,.3);position:absolute;top:8px;right:12px}
+#prev-canvas{display:block;width:100%;border:1px solid rgba(0,255,159,.1);background:#000a03;margin-top:12px}
+
+/* STATS */
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:28px}
+.scard{border:1px solid rgba(0,255,159,.1);padding:14px;text-align:center;background:#00050210}
+.scard-num{font-family:'Bebas Neue',sans-serif;font-size:36px;line-height:1;margin-bottom:2px}
+.scard-label{font-size:9px;letter-spacing:.15em;color:var(--muted);text-transform:uppercase}
+
+/* CONTACT */
+.contact-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}
+.contact-btn{font-family:'Orbitron',sans-serif;font-size:10px;letter-spacing:.15em;padding:8px 16px;border:1px solid;background:transparent;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:all .2s;color:inherit;text-decoration:none}
+.contact-btn:hover{transform:skewX(-3deg)}
+.btn-g{color:var(--neon);border-color:var(--neon)}
+.btn-g:hover{background:rgba(0,255,159,.1);box-shadow:0 0 15px rgba(0,255,159,.2)}
+.btn-r{color:var(--neon2);border-color:var(--neon2)}
+.btn-r:hover{background:rgba(255,0,60,.1);box-shadow:0 0 15px rgba(255,0,60,.2)}
+.btn-b{color:var(--neon4);border-color:var(--neon4)}
+.btn-b:hover{background:rgba(0,207,255,.1);box-shadow:0 0 15px rgba(0,207,255,.2)}
+.rm-footer{text-align:center;padding-top:20px;border-top:1px solid rgba(0,255,159,.08)}
+.rm-footer-text{font-family:'VT323',monospace;font-size:16px;letter-spacing:.3em;color:rgba(0,255,159,.25)}
+
+/* PINNED */
+.pinned-section{margin-top:24px}
+.pinned-header{font-family:'Orbitron',sans-serif;font-size:10px;letter-spacing:.2em;color:var(--muted);margin-bottom:12px;text-transform:uppercase}
+.pinned-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.pinned-card{border:1px solid rgba(0,255,159,.12);background:#00050210;padding:14px;transition:all .2s}
+.pinned-card:hover{border-color:rgba(0,255,159,.4);box-shadow:0 0 12px rgba(0,255,159,.06)}
+.pinned-card-name{font-family:'Orbitron',sans-serif;font-size:11px;color:var(--neon);margin-bottom:6px}
+.pinned-card-desc{font-size:11px;color:#3a6a4a;line-height:1.4;margin-bottom:10px}
+.pinned-meta{font-size:10px;color:var(--muted);display:flex;gap:12px}
+
+@media(max-width:900px){
+  .gh-main{grid-template-columns:1fr}
+  .proj-grid,.pinned-grid{grid-template-columns:1fr}
+  .stats-row{grid-template-columns:1fr 1fr}
+  .hero-title .t1{font-size:48px}
+  .ascii-art{display:none}
+}
+</style>
+</head>
+<body>
+
+<canvas id="matrix-bg"></canvas>
+
+<nav class="gh-nav">
+  <div class="gh-logo">⬡ GITHUB</div>
+  <div class="gh-nav-link">PRODUCT</div>
+  <div class="gh-nav-link">SOLUTIONS</div>
+  <div class="gh-nav-link">OPEN SOURCE</div>
+  <div class="gh-nav-link">PRICING</div>
+  <div style="margin-left:auto;font-family:'Orbitron',sans-serif;font-size:10px;color:var(--muted);letter-spacing:.1em">
+    SIGN IN <span class="blink" style="color:var(--neon)">█</span>
+  </div>
+</nav>
+
+<div class="gh-main">
+
+  <aside>
+    <div class="avatar-radar">
+      <div class="radar-ring r1"></div>
+      <div class="radar-ring r2"></div>
+      <div class="radar-ring r3"></div>
+      <div class="radar-sweep"></div>
+      <div class="radar-cross"></div>
+      <div class="blip" style="top:28%;left:60%;animation-delay:.5s"></div>
+      <div class="blip" style="top:55%;left:75%;animation-delay:1.2s;width:4px;height:4px"></div>
+      <div class="blip" style="top:70%;left:35%;animation-delay:2.1s;width:3px;height:3px"></div>
+      <div class="blip" style="top:40%;left:20%;animation-delay:.8s"></div>
+      <div class="avatar-inner"><span class="omega-symbol">Ω</span></div>
+    </div>
+
+    <div class="profile-name">OmegaOneCTRL</div>
+    <div class="profile-handle">OmegaOneCTRL</div>
+
+    <div class="bio-terminal">
+      <div class="bio-line">&gt; <span>AGENT</span> :: <em>Développeur</em></div>
+      <div class="bio-line">&gt; <span>STACK</span> :: <em>Bun / TS / JS / Py</em></div>
+      <div class="bio-line">&gt; <span>MODE</span>  :: <em>local-first · self-hosted</em></div>
+      <div class="bio-line">&gt; STATUS :: <span style="animation:blink-a 1s step-end infinite">ONLINE ●</span></div>
+    </div>
+
+    <div class="stat-grid">
+      <div class="stat-box"><div class="stat-num">5+</div><div class="stat-label">Projets</div></div>
+      <div class="stat-box"><div class="stat-num">BUN</div><div class="stat-label">Runtime</div></div>
+      <div class="stat-box"><div class="stat-num">∞</div><div class="stat-label">Commits/nuit</div></div>
+    </div>
+
+    <div class="tech-tags">
+      <span class="tag tag-g">JavaScript</span>
+      <span class="tag tag-b">TypeScript</span>
+      <span class="tag tag-y">Bun</span>
+      <span class="tag tag-r">Node.js</span>
+      <span class="tag tag-p">Python</span>
+      <span class="tag tag-g">Discord API</span>
+      <span class="tag tag-b">HTML5</span>
+      <span class="tag tag-r">CSS3</span>
+      <span class="tag tag-p">Electron</span>
+      <span class="tag tag-y">Git</span>
+    </div>
+  </aside>
+
+  <main>
+    <div class="profile-tabs">
+      <div class="tab active">▸ Overview</div>
+      <div class="tab">Repositories <span style="color:var(--neon3);margin-left:4px">1</span></div>
+      <div class="tab">Projects</div>
+      <div class="tab">Stars</div>
+    </div>
+
+    <div class="readme-wrapper">
+      <div class="rm-header">
+        <div style="width:8px;height:8px;border-radius:50%;background:#ff5f57;display:inline-block"></div>
+        <div style="width:8px;height:8px;border-radius:50%;background:#ffbd2e;display:inline-block"></div>
+        <div style="width:8px;height:8px;border-radius:50%;background:#28ca41;display:inline-block"></div>
+        <span style="margin-left:8px">OmegaOneCTRL / OmegaOneCTRL — <span style="color:var(--neon)">README.md</span></span>
+        <span style="margin-left:auto;color:rgba(0,255,159,.3);font-size:10px;letter-spacing:.1em">✨ SPECIAL PROFILE</span>
+      </div>
+
+      <div class="rm-body">
+
+        <div class="hero">
+          <div class="ascii-art">
+ ██████╗ ███╗   ███╗███████╗ ██████╗  █████╗
+██╔═══██╗████╗ ████║██╔════╝██╔════╝ ██╔══██╗
+██║   ██║██╔████╔██║█████╗  ██║  ███╗███████║
+██║   ██║██║╚██╔╝██║██╔══╝  ██║   ██║██╔══██║
+╚██████╔╝██║ ╚═╝ ██║███████╗╚██████╔╝██║  ██║
+ ╚═════╝ ╚═╝     ╚═╝╚══════╝ ╚═════╝ ╚═╝  ╚═╝</div>
+
+          <div class="hero-title">
+            <span class="t1">OMEGA</span>
+            <span class="t2">ONE · CTRL</span>
+          </div>
+          <div class="hero-sub">
+            <span>//</span> fullstack · local-first · open-source <span>//</span>
+          </div>
+          <div style="margin-top:12px;font-family:'Share Tech Mono',monospace;font-size:13px;color:rgba(0,255,159,.5)">
+            <span id="typeout"></span><span class="type-cursor"></span>
+          </div>
+        </div>
+
+        <div class="neon-div"></div>
+
+        <div class="sec-title">
+          <span class="bracket">[</span><span class="label">ARSENAL TECHNOLOGIQUE</span><span class="bracket">]</span>
+        </div>
+
+        <div class="hex-grid">
+          <div class="hex" style="background:linear-gradient(135deg,#1a1600,#000a05)">
+            <div class="hex-bg" style="background:rgba(241,224,90,.04)"></div>
+            <div class="hex-icon">JS</div>
+            <div class="hex-label" style="color:#f1e05a">JavaScript</div>
+          </div>
+          <div class="hex" style="background:linear-gradient(135deg,#001020,#000a05)">
+            <div class="hex-bg" style="background:rgba(49,120,198,.04)"></div>
+            <div class="hex-icon" style="color:#3178c6">TS</div>
+            <div class="hex-label" style="color:#3178c6">TypeScript</div>
+          </div>
+          <div class="hex" style="background:linear-gradient(135deg,#1a0e00,#000a05)">
+            <div class="hex-bg" style="background:rgba(251,191,36,.04)"></div>
+            <div class="hex-icon">🍞</div>
+            <div class="hex-label" style="color:#fbbf24">Bun</div>
+          </div>
+          <div class="hex" style="background:linear-gradient(135deg,#00100a,#000a05)">
+            <div class="hex-bg" style="background:rgba(63,182,139,.04)"></div>
+            <div class="hex-icon" style="color:#3fb68b">⬡</div>
+            <div class="hex-label" style="color:#3fb68b">Node.js</div>
+          </div>
+          <div class="hex" style="background:linear-gradient(135deg,#100010,#000a05)">
+            <div class="hex-bg" style="background:rgba(55,118,171,.04)"></div>
+            <div class="hex-icon">🐍</div>
+            <div class="hex-label" style="color:#3776ab">Python</div>
+          </div>
+          <div class="hex" style="background:linear-gradient(135deg,#100020,#000a05)">
+            <div class="hex-bg" style="background:rgba(88,101,242,.04)"></div>
+            <div class="hex-icon">🎮</div>
+            <div class="hex-label" style="color:#5865f2">Discord</div>
+          </div>
+          <div class="hex" style="background:linear-gradient(135deg,#100005,#000a05)">
+            <div class="hex-bg" style="background:rgba(240,80,51,.04)"></div>
+            <div class="hex-icon">⚡</div>
+            <div class="hex-label" style="color:#e34c26">HTML5</div>
+          </div>
+          <div class="hex" style="background:linear-gradient(135deg,#0a0020,#000a05)">
+            <div class="hex-bg" style="background:rgba(150,100,210,.04)"></div>
+            <div class="hex-icon">🎨</div>
+            <div class="hex-label" style="color:#9b72cf">CSS3</div>
+          </div>
+        </div>
+
+        <div class="neon-div"></div>
+
+        <!-- SNAKE PREVIEW -->
+        <div class="sec-title">
+          <span class="bracket">[</span><span class="label">CONTRIBUTIONS · SNAKE EASTER EGG</span><span class="bracket">]</span>
+        </div>
+
+        <div class="snake-section">
+          <div style="font-size:12px;color:rgba(0,255,159,.5);margin-bottom:4px">
+            🐍 Un snake mange tes contributions — généré automatiquement par GitHub Actions
+          </div>
+          <div style="font-size:10px;color:rgba(0,255,159,.25);margin-bottom:12px">
+            → Platane/snk@v3 · rafraîchi toutes les 6h · dark mode adaptatif · couleurs custom dorées
+          </div>
+          <canvas id="prev-canvas" height="90"></canvas>
+          <div style="font-size:10px;color:rgba(0,255,159,.2);margin-top:8px;text-align:right">
+            aperçu simulé — le SVG réel est généré depuis tes vrais commits
+          </div>
+        </div>
+
+        <div class="neon-div"></div>
+
+        <!-- PROJETS -->
+        <div class="sec-title">
+          <span class="bracket">[</span><span class="label">OPÉRATIONS EN COURS</span><span class="bracket">]</span>
+        </div>
+
+        <div class="proj-grid">
+          <div class="proj-card">
+            <div class="proj-top-bar" style="background:linear-gradient(90deg,transparent,var(--neon),transparent)"></div>
+            <div class="proj-icon">🎙️</div>
+            <div class="proj-name" style="color:var(--neon)">DiscordBotSpeaker</div>
+            <div class="proj-desc">Interface web locale pour contrôler un bot Discord. Stack Bun + TypeScript. v2.1.0.</div>
+            <div class="proj-tags">
+              <span class="proj-tag" style="color:#f1e05a;border-color:rgba(241,224,90,.3)">JS</span>
+              <span class="proj-tag" style="color:#3178c6;border-color:rgba(49,120,198,.3)">TS</span>
+              <span class="proj-tag" style="color:#fbbf24;border-color:rgba(251,191,36,.3)">BUN</span>
+            </div>
+          </div>
+          <div class="proj-card">
+            <div class="proj-top-bar" style="background:linear-gradient(90deg,transparent,var(--neon2),transparent)"></div>
+            <div class="proj-icon">🔧</div>
+            <div class="proj-name" style="color:var(--neon2)">DiscordForge</div>
+            <div class="proj-desc">PWA / app locale pour configurer des bots Discord et déployer des scripts Python.</div>
+            <div class="proj-tags">
+              <span class="proj-tag" style="color:#e34c26;border-color:rgba(227,76,38,.3)">HTML</span>
+              <span class="proj-tag" style="color:#f1e05a;border-color:rgba(241,224,90,.3)">JS</span>
+            </div>
+          </div>
+          <div class="proj-card">
+            <div class="proj-top-bar" style="background:linear-gradient(90deg,transparent,var(--purple),transparent)"></div>
+            <div class="proj-icon">🎬</div>
+            <div class="proj-name" style="color:var(--purple)">Movix</div>
+            <div class="proj-desc">App Electron cross-platform avec OAuth Discord/Google, ad-blocking et auto-updater.</div>
+            <div class="proj-tags">
+              <span class="proj-tag" style="color:var(--purple);border-color:rgba(191,0,255,.3)">TS</span>
+              <span class="proj-tag" style="color:var(--purple);border-color:rgba(191,0,255,.3)">ELECTRON</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="stats-row">
+          <div class="scard"><div class="scard-num" style="color:var(--neon)">5+</div><div class="scard-label">Projets actifs</div></div>
+          <div class="scard"><div class="scard-num" style="color:var(--neon3)">BUN</div><div class="scard-label">Runtime favori</div></div>
+          <div class="scard"><div class="scard-num" style="color:var(--neon2)">∞</div><div class="scard-label">Local-first apps</div></div>
+        </div>
+
+        <div class="sec-title">
+          <span class="bracket">[</span><span class="label">CONTACT · PROTOCOLES</span><span class="bracket">]</span>
+        </div>
+
+        <div class="contact-row">
+          <a class="contact-btn btn-g" href="#">⬡ GitHub</a>
+          <a class="contact-btn btn-r" href="#">🎮 Discord</a>
+        </div>
+
+        <div class="rm-footer">
+          <div class="rm-footer-text">— · ΩNE CTRL · — FAIT EN LOCAL · DÉPLOYÉ NULLE PART — · ΩNE CTRL · —</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pinned-section">
+      <div class="pinned-header">&gt; REPOS ÉPINGLÉS</div>
+      <div class="pinned-grid">
+        <div class="pinned-card">
+          <div class="pinned-card-name">⬡ Discord-Bot-Speaker</div>
+          <div class="pinned-card-desc">Interface web locale pour parler dans Discord via ton bot. Bun + TypeScript.</div>
+          <div class="pinned-meta"><span style="color:#f1e05a">● JS</span><span>⭐ 1</span><span>🍴 1</span></div>
+        </div>
+        <div class="pinned-card" style="border-style:dashed;opacity:.3">
+          <div class="pinned-card-name" style="color:var(--muted)">+ SLOT LIBRE</div>
+          <div class="pinned-card-desc">Épingle jusqu'à 6 repos depuis les paramètres de ton profil.</div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script>
+/* MATRIX RAIN */
+const mc=document.getElementById('matrix-bg'),mx=mc.getContext('2d');
+function rm(){mc.width=innerWidth;mc.height=innerHeight}rm();
+window.addEventListener('resize',rm);
+const chars='ΩαβγδεζΨ01アイウエオ';
+const fs=14;let dr=Array(Math.floor(innerWidth/fs)).fill(1);
+setInterval(()=>{
+  mx.fillStyle='rgba(0,0,10,.04)';mx.fillRect(0,0,mc.width,mc.height);
+  mx.fillStyle='#00ff9f';mx.font=fs+'px Share Tech Mono,monospace';
+  dr.forEach((y,i)=>{
+    const c=chars[Math.floor(Math.random()*chars.length)];
+    mx.globalAlpha=Math.random()*.5+.1;mx.fillText(c,i*fs,y*fs);mx.globalAlpha=1;
+    if(y*fs>mc.height&&Math.random()>.975)dr[i]=0;dr[i]++;
+  });
+},50);
+
+/* TYPEWRITER */
+const phrases=['bun start && profit','local-first by design','git push --force (sometimes)','discord.js was too slow → rewrite in Bun','npm? non merci. bun install.'];
+let pi=0,ci=0,del=false;const out=document.getElementById('typeout');
+function type(){const p=phrases[pi];if(!del){out.textContent=p.slice(0,++ci);if(ci===p.length){del=true;setTimeout(type,1800);return}}else{out.textContent=p.slice(0,--ci);if(ci===0){del=false;pi=(pi+1)%phrases.length}}setTimeout(type,del?40:80)}
+type();
+
+/* SNAKE PREVIEW */
+const pc=document.getElementById('prev-canvas'),pctx=pc.getContext('2d');
+function rp(){pc.width=pc.offsetWidth;pc.height=90}rp();
+const PC=52,PR=7,PCELL=11,PGAP=2;
+let pg=[];for(let c=0;c<PC;c++){pg[c]=[];for(let r=0;r<PR;r++){const rc=c>=44,rv=Math.random();let l=0;if(rc){if(rv>.6)l=4;else if(rv>.45)l=3;else if(rv>.35)l=2;else if(rv>.25)l=1}else if(rv>.92)l=1;pg[c][r]=l}}
+const PL=['#0d1117','#1a2e1f','#1d4a2a','#2a7a3e','#3fb68b'];
+let ps=[[4,3],[3,3],[2,3]],pf=[10,3],pd=[1,0],psc=0;
+function dp(){
+  pctx.clearRect(0,0,pc.width,90);pctx.fillStyle='#000a03';pctx.fillRect(0,0,pc.width,90);
+  const px=(pc.width-(PC*(PCELL+PGAP)-PGAP))/2,py=(90-(PR*(PCELL+PGAP)-PGAP))/2;
+  for(let c=0;c<PC;c++)for(let r=0;r<PR;r++){const x=px+c*(PCELL+PGAP),y=py+r*(PCELL+PGAP);pctx.beginPath();pctx.roundRect(x,y,PCELL,PCELL,2);pctx.fillStyle=PL[pg[c][r]];pctx.fill()}
+  if(pf){const fx=px+pf[0]*(PCELL+PGAP),fy=py+pf[1]*(PCELL+PGAP);pctx.save();pctx.shadowBlur=8;pctx.shadowColor='#3fb68b';pctx.beginPath();pctx.roundRect(fx,fy,PCELL,PCELL,2);pctx.fillStyle='#3fb68b';pctx.fill();pctx.restore()}
+  for(let i=ps.length-1;i>=0;i--){const[sc,sr]=ps[i];if(sc<0||sc>=PC||sr<0||sr>=PR)continue;const sx=px+sc*(PCELL+PGAP),sy=py+sr*(PCELL+PGAP);pctx.save();pctx.globalAlpha=i===0?1:.35+.5*(1-i/ps.length);if(i===0){pctx.shadowBlur=8;pctx.shadowColor='#c9a84c'}pctx.beginPath();pctx.roundRect(sx,sy,PCELL,PCELL,i===0?3:2);pctx.fillStyle=i===0?'#c9a84c':'#7d6830';pctx.fill();pctx.restore()}
+  pctx.fillStyle='rgba(201,168,76,.5)';pctx.font='9px Share Tech Mono,monospace';pctx.fillText('🐍 SCORE: '+psc,8,86);
+}
+function tp(){
+  const[hc,hr]=ps[0];const nc=((hc+pd[0])+PC)%PC,nr=((hr+pd[1])+PR)%PR;
+  ps.unshift([nc,nr]);
+  if(pf&&nc===pf[0]&&nr===pf[1]){psc++;pg[nc][nr]=0;const ca=[];for(let c=0;c<PC;c++)for(let r=0;r<PR;r++)if(pg[c][r]>0)ca.push([c,r]);pf=ca.length?ca[Math.floor(Math.random()*ca.length)]:null;if(pf){const dc=pf[0]-nc,dr2=pf[1]-nr;pd=Math.abs(dc)>Math.abs(dr2)?[Math.sign(dc),0]:[0,Math.sign(dr2)]}}
+  else{ps.pop();if(pf&&Math.random()<.2){const dc=pf[0]-nc,dr2=pf[1]-nr;pd=Math.abs(dc)>Math.abs(dr2)?[Math.sign(dc),0]:[0,Math.sign(dr2)]}}
+  dp();
+}
+setInterval(tp,100);dp();
+window.addEventListener('resize',()=>{rp();rm();dr=Array(Math.floor(innerWidth/fs)).fill(1)});
+</script>
+</body>
+</html>
