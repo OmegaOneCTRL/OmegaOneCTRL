@@ -1,9 +1,11 @@
-██████╗ ███╗   ███╗███████╗ ██████╗  █████╗
+<div align="center"><pre>
+ ██████╗ ███╗   ███╗███████╗ ██████╗  █████╗
 ██╔═══██╗████╗ ████║██╔════╝██╔════╝ ██╔══██╗
 ██║   ██║██╔████╔██║█████╗  ██║  ███╗███████║
 ██║   ██║██║╚██╔╝██║██╔══╝  ██║   ██║██╔══██║
 ╚██████╔╝██║ ╚═╝ ██║███████╗╚██████╔╝██║  ██║
  ╚═════╝ ╚═╝     ╚═╝╚══════╝ ╚═════╝ ╚═╝  ╚═╝
+</pre></div>
 
 # Ω   OmegaOneCTRL   Ω
 
@@ -16,12 +18,12 @@
 ## `[ DOSSIER AGENT ]`
 ```json
 {
-  "identité"  : "Développeur fullstack indépendant",
-  "projet"    : "ProjetOmegaFR",
-  "runtime"   : "Bun > Node",
-  "navigateur": "Waterfox",
+  "identité"   : "Développeur fullstack indépendant",
+  "projet"     : "ProjetOmegaFR",
+  "runtime"    : "Bun > Node",
+  "navigateur" : "Waterfox",
   "philosophie": "local-first · self-hosted · zero-dependency",
-  "status"    : "ONLINE ●"
+  "status"     : "ONLINE ●"
 }
 ```
 
@@ -29,34 +31,50 @@
 
 ## `[ ARSENAL TECHNOLOGIQUE ]`
 
-[![JavaScript](https://img.shields.io/badge/JavaScript-F1E05A?style=for-the-badge&logo=javascript&logoColor=black)](https://img.shields.io/badge/JavaScript-F1E05A?style=for-the-badge&logo=javascript&logoColor=black)
-[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-[![HTML5](https://img.shields.io/badge/HTML5-E34C26?style=for-the-badge&logo=html5&logoColor=white)](https://img.shields.io/badge/HTML5-E34C26?style=for-the-badge&logo=html5&logoColor=white)
-[![CSS3](https://img.shields.io/badge/CSS3-9B72CF?style=for-the-badge&logo=css3&logoColor=white)](https://img.shields.io/badge/CSS3-9B72CF?style=for-the-badge&logo=css3&logoColor=white)
+**`// LANGUAGES`**
 
-[![Bun](https://img.shields.io/badge/Bun-FBF0DF?style=for-the-badge&logo=bun&logoColor=black)](https://img.shields.io/badge/Bun-FBF0DF?style=for-the-badge&logo=bun&logoColor=black)
-[![Node.js](https://img.shields.io/badge/Node.js-3FB68B?style=for-the-badge&logo=node.js&logoColor=white)](https://img.shields.io/badge/Node.js-3FB68B?style=for-the-badge&logo=node.js&logoColor=white)
-[![Electron](https://img.shields.io/badge/Electron-47848F?style=for-the-badge&logo=electron&logoColor=white)](https://img.shields.io/badge/Electron-47848F?style=for-the-badge&logo=electron&logoColor=white)
-[![Discord](https://img.shields.io/badge/Discord_API-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://img.shields.io/badge/Discord_API-5865F2?style=for-the-badge&logo=discord&logoColor=white)
-[![Git](https://img.shields.io/badge/Git-F05133?style=for-the-badge&logo=git&logoColor=white)](https://img.shields.io/badge/Git-F05133?style=for-the-badge&logo=git&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F1E05A?style=flat-square&logo=javascript&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML5-E34C26?style=flat-square&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-9B72CF?style=flat-square&logo=css3&logoColor=white)
+
+**`// RUNTIME & FRAMEWORKS`**
+
+![Bun](https://img.shields.io/badge/Bun-FBF0DF?style=flat-square&logo=bun&logoColor=black)
+![Node.js](https://img.shields.io/badge/Node.js-3FB68B?style=flat-square&logo=node.js&logoColor=white)
+![Electron](https://img.shields.io/badge/Electron-47848F?style=flat-square&logo=electron&logoColor=white)
+
+**`// OUTILS`**
+
+![Git](https://img.shields.io/badge/Git-F05133?style=flat-square&logo=git&logoColor=white)
+![Discord API](https://img.shields.io/badge/Discord_API-5865F2?style=flat-square&logo=discord&logoColor=white)
+![Waterfox](https://img.shields.io/badge/Waterfox-00AEF3?style=flat-square&logo=firefox&logoColor=white)
 
 ---
 
 ## `[ OPÉRATIONS EN COURS ]`
 
 | Projet | Description | Stack |
-| --- | --- | --- |
+|--------|-------------|-------|
 | 🎙️ **[DiscordBotSpeaker](https://github.com/OmegaOneCTRL/Discord-Bot-Speaker)** | Interface web locale pour contrôler un bot Discord — UI Discord-like, v2.1.0 | `Bun` `TypeScript` `JavaScript` |
 
 ---
 
 ## `[ STATISTIQUES ]`
 
-[![GitHub Stats](https://github-readme-stats.vercel.app/api?username=OmegaOneCTRL&show_icons=true&theme=chartreuse-dark&hide_border=true&bg_color=00000a&title_color=00ff9f&icon_color=00ff9f&text_color=b8ffd8)](https://github-readme-stats.vercel.app/api?username=OmegaOneCTRL&show_icons=true&theme=chartreuse-dark&hide_border=true&bg_color=00000a&title_color=00ff9f&icon_color=00ff9f&text_color=b8ffd8)
+<div align="center">
 
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=OmegaOneCTRL&layout=compact&theme=chartreuse-dark&hide_border=true&bg_color=00000a&title_color=00ff9f&text_color=b8ffd8)](https://github-readme-stats.vercel.app/api/top-langs/?username=OmegaOneCTRL&layout=compact&theme=chartreuse-dark&hide_border=true&bg_color=00000a&title_color=00ff9f&text_color=b8ffd8)
+[![GitHub Stats](https://github-readme-stats.vercel.app/api?username=OmegaOneCTRL&show_icons=true&theme=chartreuse-dark&hide_border=true&bg_color=00000a&title_color=00ff9f&icon_color=00ff9f&text_color=b8ffd8)](https://github.com/OmegaOneCTRL)
+
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=OmegaOneCTRL&layout=compact&theme=chartreuse-dark&hide_border=true&bg_color=00000a&title_color=00ff9f&text_color=b8ffd8)](https://github.com/OmegaOneCTRL)
+
+</div>
 
 ---
 
+<div align="center">
+
 `— · Ω N E · C T R L · — fait en local · déployé nulle part — · Ω N E · C T R L · —`
+
+</div>
